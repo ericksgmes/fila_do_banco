@@ -1,0 +1,4 @@
+# ninja log v5
+1	255	1716332954567950906	CMakeFiles/fila_do_banco.dir/main.c.o	27cb083b7a57fe5b
+2	256	1716332954568860599	CMakeFiles/fila_do_banco.dir/queue.c.o	8548d8cad5c61102
+256	411	1716332954723033888	fila_do_banco	62029602e09b79de
