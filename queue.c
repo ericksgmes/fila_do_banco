@@ -28,10 +28,10 @@ void in(t_queue *fila, ParsedResult val) {
 
 
 void out(t_queue *fila, ParsedResult *outVal) {
-    if (is_empty(fila)) {
+    if (fila -> front == -1) {
         printf("Queue empty\n");
-        outVal->firstChar = '\0';  // Indicate empty with a null character
-        outVal->remainingStr[0] = '\0';  // Clear the string
+        outVal->firstChar = '\0';
+        outVal->remainingStr[0] = '\0';
         return;
     }
     *outVal = fila->items[fila->front];
@@ -45,11 +45,11 @@ void out(t_queue *fila, ParsedResult *outVal) {
 
 
 bool is_empty(t_queue *fila) {
-    return (fila->front == -1);
+    return fila->front == -1;
 }
 
 bool is_full(t_queue *fila) {
-    return ((fila->back + 1) % fila->max_size == fila->front);
+    return (fila->back + 1) % fila->max_size == fila->front;
 }
 
 void clear(t_queue *fila) {
