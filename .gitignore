@@ -57,3 +57,4 @@ dkms.conf
 *.ninja_log
 fila_do_banco
 *.log
+/.idea/inspectionProfiles/Project_Default.xml
