@@ -7,7 +7,7 @@
 
 typedef struct {
     char firstChar;
-    char remainingStr[255];
+    char *remainingStr;
 } ParsedResult;
 
 ParsedResult parse(const char *input);

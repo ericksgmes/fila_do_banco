@@ -4,9 +4,11 @@
 
 #include "parsedResult.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 ParsedResult parse(const char *input) {
     ParsedResult result;
+    result.remainingStr = malloc(1000 * sizeof(char));
     sscanf(input, " %c %99[^\n]", &result.firstChar, result.remainingStr);
     return result;
 }
