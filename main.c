@@ -18,9 +18,13 @@ ParsedResult parse(const char *input) {
     return result;
 }
 
+void printChar(ParsedResult parsed_result) {
+    printf("%c", parsed_result.firstChar);
+}
+
 int main() {
-    t_queue fila;
-    int outVal;
+    ParsedResult parsed_result = parse(" p João manoel");
+    printChar(parsed_result);
 
 
     return 0;
