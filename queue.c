@@ -7,14 +7,15 @@
 #include <stdlib.h>
 
 void create(t_queue *fila, int size) {
-    fila->items = (int *) malloc(size * sizeof(int));
+    fila->items = (ParsedResult *) malloc(size * sizeof(ParsedResult));
     fila->front = -1;
     fila->back = -1;
     fila->max_size = size;
 }
 
-void in(t_queue *fila, int val) {
-    if ((fila->back + 1) % fila->max_size == fila->front) {
+
+void in(t_queue *fila, ParsedResult val) {
+    if (is_full(fila)) {
         printf("Queue full\n");
         return;
     }
@@ -25,10 +26,12 @@ void in(t_queue *fila, int val) {
     fila->items[fila->back] = val;
 }
 
-void out(t_queue *fila, int *outVal) {
-    if (fila->front == -1) {
+
+void out(t_queue *fila, ParsedResult *outVal) {
+    if (is_empty(fila)) {
         printf("Queue empty\n");
-        *outVal = -1;
+        outVal->firstChar = '\0';  // Indicate empty with a null character
+        outVal->remainingStr[0] = '\0';  // Clear the string
         return;
     }
     *outVal = fila->items[fila->front];
@@ -39,6 +42,7 @@ void out(t_queue *fila, int *outVal) {
         fila->front = (fila->front + 1) % fila->max_size;
     }
 }
+
 
 bool is_empty(t_queue *fila) {
     return (fila->front == -1);
