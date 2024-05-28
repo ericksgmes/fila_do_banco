@@ -3,6 +3,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "queue.h"
 #include "parsedResult.h"
@@ -10,7 +11,7 @@
 #define MAX_QUEUE_SIZE 20
 
 int main() {
-    char n[255];
+    char * n =  malloc(1000 * sizeof(char));
     ParsedResult parsed_result;
     t_queue fila_geral, fila_prioridade, fila_resultados;
     create(&fila_geral, MAX_QUEUE_SIZE);
@@ -19,7 +20,7 @@ int main() {
     int counter = 0;
 
     while (1) {
-        scanf(" %[^\n]", &n);
+        scanf(" %[^\n]", n);
         parsed_result = parse(n);
         ParsedResult outVal;
         if (getChar(parsed_result) == 'f') {
