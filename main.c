@@ -18,19 +18,15 @@ ParsedResult parse(const char *input) {
     return result;
 }
 
-void printChar(ParsedResult parsed_result) {
-    printf("%c", parsed_result.firstChar);
+char getChar(ParsedResult parsed_result) {
+    return parsed_result.firstChar;
 }
 
-void printName(ParsedResult parsed_result) {
-    printf("%s", parsed_result.remainingStr);
+char * getName(ParsedResult parsed_result) {
+    return parsed_result.remainingStr;
 }
 
 int main() {
-    ParsedResult parsed_result = parse(" p João manoel ");
-    printName(parsed_result);
-    printChar(parsed_result);
-
 
     return 0;
 }
