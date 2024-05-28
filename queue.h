@@ -21,5 +21,6 @@ bool is_empty(t_queue * fila);
 bool is_full(t_queue * fila);
 void clear(t_queue * fila);
 int size(t_queue * fila);
+void printQueue(t_queue * fila);
 
 #endif //QUEUE_H
