@@ -43,7 +43,6 @@ void out(t_queue *fila, ParsedResult *outVal) {
     }
 }
 
-
 bool is_empty(t_queue *fila) {
     return fila->front == -1;
 }
@@ -65,4 +64,10 @@ int size(t_queue *fila) {
         return fila->back - fila->front + 1;
     }
     return fila->max_size - fila->front + fila->back + 1;
+}
+
+void printQueue(t_queue * fila) {
+    for(int i = 0; i < fila->back+1; i++) {
+        printf("%s\n", fila->items[i].remainingStr);
+    }
 }
