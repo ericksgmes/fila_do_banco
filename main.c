@@ -22,9 +22,13 @@ void printChar(ParsedResult parsed_result) {
     printf("%c", parsed_result.firstChar);
 }
 
+void printName(ParsedResult parsed_result) {
+    printf("%s", parsed_result.remainingStr);
+}
+
 int main() {
     ParsedResult parsed_result = parse(" p João manoel");
-    printChar(parsed_result);
+    printName(parsed_result);
 
 
     return 0;
