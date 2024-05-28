@@ -8,7 +8,7 @@
 #include "parsedResult.h"
 
 typedef struct {
-    int *items;
+    ParsedResult *items;
     int max_size;
     int front;
     int back;
