@@ -27,8 +27,9 @@ void printName(ParsedResult parsed_result) {
 }
 
 int main() {
-    ParsedResult parsed_result = parse(" p João manoel");
+    ParsedResult parsed_result = parse(" p João manoel ");
     printName(parsed_result);
+    printChar(parsed_result);
 
 
     return 0;
