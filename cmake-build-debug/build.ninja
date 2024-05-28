@@ -61,6 +61,12 @@ build CMakeFiles/fila_do_banco.dir/queue.c.o: C_COMPILER__fila_do_banco_unscanne
   OBJECT_DIR = CMakeFiles/fila_do_banco.dir
   OBJECT_FILE_DIR = CMakeFiles/fila_do_banco.dir
 
+build CMakeFiles/fila_do_banco.dir/parsedResult.c.o: C_COMPILER__fila_do_banco_unscanned_Debug /Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/fila_do_banco/parsedResult.c || cmake_object_order_depends_target_fila_do_banco
+  DEP_FILE = CMakeFiles/fila_do_banco.dir/parsedResult.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/fila_do_banco.dir
+  OBJECT_FILE_DIR = CMakeFiles/fila_do_banco.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target fila_do_banco
@@ -69,7 +75,7 @@ build CMakeFiles/fila_do_banco.dir/queue.c.o: C_COMPILER__fila_do_banco_unscanne
 #############################################
 # Link the executable fila_do_banco
 
-build fila_do_banco: C_EXECUTABLE_LINKER__fila_do_banco_Debug CMakeFiles/fila_do_banco.dir/main.c.o CMakeFiles/fila_do_banco.dir/queue.c.o
+build fila_do_banco: C_EXECUTABLE_LINKER__fila_do_banco_Debug CMakeFiles/fila_do_banco.dir/main.c.o CMakeFiles/fila_do_banco.dir/queue.c.o CMakeFiles/fila_do_banco.dir/parsedResult.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/fila_do_banco.dir
   POST_BUILD = :
