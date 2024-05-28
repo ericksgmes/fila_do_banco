@@ -3,17 +3,19 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 
 #include "queue.h"
 #include "parsedResult.h"
 
+#define MAX_QUEUE_SIZE 20
+
 int main() {
     char n[255];
     ParsedResult parsed_result;
-    t_queue fila_geral, fila_prioridade;
-    create(&fila_geral, 20);
-    create(&fila_prioridade, 20);
+    t_queue fila_geral, fila_prioridade, fila_resultados;
+    create(&fila_geral, MAX_QUEUE_SIZE);
+    create(&fila_prioridade, MAX_QUEUE_SIZE);
+    create(&fila_resultados, (MAX_QUEUE_SIZE*2));
     int counter = 0;
 
     while (1) {
@@ -21,6 +23,7 @@ int main() {
         parsed_result = parse(n);
         ParsedResult outVal;
         if (getChar(parsed_result) == 'f') {
+            printQueue(&fila_resultados);
             break;
         }
         if (getChar(parsed_result) == 'g') {
@@ -32,11 +35,11 @@ int main() {
         if (getChar(parsed_result) == 's') {
             if (is_empty(&fila_prioridade) || counter == 3) {
                 out(&fila_geral, &outVal);
-                printf("%s\n", getName(outVal));
+                in(&fila_resultados, outVal);
                 counter = 0;
             } else {
                 out(&fila_prioridade, &outVal);
-                printf("%s\n", getName(outVal));
+                in(&fila_resultados, outVal);
                 counter++;
             }
         }
