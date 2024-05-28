@@ -6,27 +6,26 @@
 #include <stdlib.h>
 
 #include "queue.h"
-
-typedef struct {
-    char firstChar;
-    char remainingStr[255];
-} ParsedResult;
-
-ParsedResult parse(const char *input) {
-    ParsedResult result;
-    sscanf(input, " %c %99[^\n]", &result.firstChar, result.remainingStr);
-    return result;
-}
-
-char getChar(ParsedResult parsed_result) {
-    return parsed_result.firstChar;
-}
-
-char * getName(ParsedResult parsed_result) {
-    return parsed_result.remainingStr;
-}
+#include "parsedResult.h"
 
 int main() {
+    char n[255];
+    ParsedResult parsed_result;
+    t_queue fila_geral, fila_prioridade;
+    create(&fila_geral, 20);
+    create(&fila_prioridade, 20);
+
+    while (1) {
+        scanf(" %[^\n]", &n);
+        parsed_result = parse(n);
+        if (getChar(parsed_result) == 'f') {
+            break;
+        }
+        if (getChar(parsed_result) == 'g') {
+            in(fila_geral);
+        }
+    }
+
 
     return 0;
 }
